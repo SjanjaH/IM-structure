@@ -1,0 +1,261 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Структура Інституту міста</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,500&display=swap">
+<style>
+/* Layout: printed-poster one-pager — leadership spine at top, three dashed block frames below, each role opens in place */
+:root{
+  --paper:#ffffff; --ink:#0b0b0b; --ink-2:#3d3d3d; --mute:#6f6f6f; --rule:#cfcfcf; --wash:#f2f2f2;
+  --solid:#0b0b0b; --on-solid:#ffffff;
+  --font:"Montserrat",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+  --logo-filter:none;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#0e0e0e; --ink:#f4f4f4; --ink-2:#c9c9c9; --mute:#939393; --rule:#3a3a3a; --wash:#1a1a1a;
+  --solid:#f4f4f4; --on-solid:#0e0e0e; --logo-filter:invert(1); color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#0e0e0e; --ink:#f4f4f4; --ink-2:#c9c9c9; --mute:#939393; --rule:#3a3a3a; --wash:#1a1a1a;
+  --solid:#f4f4f4; --on-solid:#0e0e0e; --logo-filter:invert(1); color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--font);font-size:15px;line-height:1.5;padding-inline:clamp(16px,4vw,48px);padding-block:32px 56px}
+.wrap{max-width:1240px;margin:0 auto;display:flex;flex-direction:column;gap:44px}
+
+/* Masthead */
+.mast{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:24px 40px;align-items:end;border-bottom:3px solid var(--ink);padding-bottom:28px}
+.mast .logo{width:180px;max-width:100%;filter:var(--logo-filter);grid-column:2;grid-row:1;justify-self:end;align-self:start}
+.mast-text{grid-column:1;grid-row:1;min-width:0;display:flex;flex-direction:column;gap:14px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-2)}
+h1{font-size:clamp(34px,6.4vw,76px);line-height:.95;font-weight:900;letter-spacing:-.03em;margin:0;text-transform:uppercase;text-wrap:balance}
+h1 em{font-style:normal;font-weight:400}
+.lead{max-width:62ch;margin:0;color:var(--ink-2)}
+.meta{display:flex;flex-wrap:wrap;gap:8px 22px;grid-column:1/-1;font-size:13px;font-weight:600;font-variant-numeric:tabular-nums}
+.meta span{display:inline-flex;gap:6px;align-items:baseline}
+.meta b{font-size:22px;font-weight:800}
+.tag{border:1.5px solid var(--ink);padding:2px 10px;border-radius:999px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;align-self:center}
+
+/* Toolbar */
+.bar{display:flex;flex-wrap:wrap;gap:12px 20px;align-items:center;justify-content:space-between;margin-bottom:-20px}
+.how{font-size:13px;color:var(--ink-2);margin:0;max-width:70ch}
+.how b{color:var(--ink)}
+.btns{display:flex;gap:8px}
+.btn{font:600 13px var(--font);color:var(--ink);background:var(--paper);border:1.5px solid var(--ink);border-radius:999px;padding:8px 16px;cursor:pointer}
+.btn:hover{background:var(--ink);color:var(--paper)}
+:focus-visible{outline:2.5px solid var(--ink);outline-offset:3px}
+
+/* Role (details) */
+details.role{border:1.5px solid var(--ink);border-radius:10px;background:var(--paper)}
+details.role>summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:11px 14px;font-weight:600;font-size:14.5px;line-height:1.3}
+details.role>summary::-webkit-details-marker{display:none}
+summary .nm{min-width:0;overflow-wrap:anywhere}
+summary .cnt{font-weight:500;font-size:12px;color:var(--mute);white-space:nowrap}
+.pm{flex:none;width:22px;height:22px;border:1.5px solid currentColor;border-radius:50%;position:relative}
+.pm::before,.pm::after{content:"";position:absolute;left:50%;top:50%;width:10px;height:1.5px;background:currentColor;transform:translate(-50%,-50%)}
+.pm::after{transform:translate(-50%,-50%) rotate(90deg)}
+details[open]>summary .pm::after{transform:translate(-50%,-50%) rotate(0deg)}
+@media (prefers-reduced-motion:no-preference){.pm::after{transition:transform .2s}}
+details.role[open]{box-shadow:4px 4px 0 var(--ink)}
+.body{padding:2px 14px 14px;display:flex;flex-direction:column;gap:10px;font-size:13.5px;border-top:1px solid var(--rule);margin:0 14px;padding-inline:0;padding-top:12px}
+.lbl{font-size:10.5px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--mute);margin:0 0 3px}
+.body p{margin:0}
+.body ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:6px}
+.body li{position:relative;padding-left:16px}
+.body li::before{content:"";position:absolute;left:0;top:.62em;width:7px;height:7px;border:1.5px solid var(--ink);transform:rotate(45deg)}
+.role.mgr>summary{font-weight:800}
+.role.solid{background:var(--solid);color:var(--on-solid);border-color:var(--solid)}
+.role.solid .body{border-color:color-mix(in srgb,var(--on-solid) 30%,transparent)}
+.role.solid .lbl{color:color-mix(in srgb,var(--on-solid) 65%,transparent)}
+.role.solid .body li::before{border-color:var(--on-solid)}
+.role.solid[open]{box-shadow:4px 4px 0 var(--rule)}
+
+/* Leadership */
+.lead-tier{display:grid;gap:0;justify-items:center}
+.dir-row{display:grid;grid-template-columns:1fr minmax(0,340px) 1fr;width:100%;align-items:start;gap:0}
+.dir-row .director{grid-column:2}
+.dir-row .director>summary{font-size:22px;font-weight:900;text-transform:uppercase;letter-spacing:.02em;padding:16px 18px}
+.assist-wrap{grid-column:3;display:flex;align-items:flex-start;padding-top:12px}
+.assist-wrap::before{content:"";flex:0 0 36px;border-top:2px dashed var(--ink);margin-top:20px}
+.assist-wrap details{flex:1;max-width:280px}
+.spine{width:2px;height:28px;background:var(--ink)}
+.deps{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;width:100%;max-width:900px;position:relative;padding-top:26px}
+.deps::before{content:"";position:absolute;top:0;left:25%;right:25%;height:26px;border:2px solid var(--ink);border-bottom:0;border-radius:10px 10px 0 0}
+.deps::after{content:"";position:absolute;top:0;bottom:-44px;left:50%;border-left:2px solid var(--ink)}
+.dep{display:flex;flex-direction:column;gap:0}
+.dep>.role>summary{font-size:16px}
+.sub{position:relative;margin-left:22px;padding-left:20px;padding-top:12px;display:flex;flex-direction:column;gap:10px}
+.sub>*{position:relative}
+.sub>*::before{content:"";position:absolute;left:-20px;top:21px;width:20px;border-top:2px solid var(--ink)}
+.sub>*::after{content:"";position:absolute;left:-20px;top:-10px;height:calc(100% + 10px);border-left:2px solid var(--ink)}
+.sub>*:first-child::after{top:-12px;height:calc(100% + 12px)}
+.sub>*:last-child::after{height:33px}
+.sub>*:first-child:last-child::after{height:35px}
+
+/* Blocks */
+.to-blocks{display:flex;flex-direction:column;align-items:center;gap:0;margin:-44px 0 -44px;position:relative;z-index:1}
+.to-blocks .spine{height:30px}
+.to-blocks .note{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);background:var(--paper);padding:4px 10px;border:1px solid var(--rule);border-radius:999px}
+.blocks{display:grid;grid-template-columns:1.15fr 1fr 1fr;gap:22px;align-items:start;position:relative;padding-top:30px}
+.blocks::before{content:"";position:absolute;top:0;left:18.3%;right:15.9%;height:30px;border:2px solid var(--ink);border-bottom:0;border-radius:10px 10px 0 0}
+.block{border:2px dashed var(--ink);border-radius:18px;padding:18px 16px 18px;display:flex;flex-direction:column;gap:14px;min-width:0;position:relative}
+.blocks>.block:nth-child(2)::before{content:"";position:absolute;top:-32px;left:50%;height:30px;border-left:2px solid var(--ink)}
+.block-h{display:flex;flex-direction:column;gap:4px}
+.block-h .k{font-size:11px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--mute)}
+.block-h h2{margin:0;font-size:21px;line-height:1.1;font-weight:800;letter-spacing:-.01em;text-wrap:balance}
+details.about{border:0;border-radius:8px;background:var(--wash)}
+details.about>summary{font-size:12.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:9px 12px}
+details.about .body{margin:0 12px;border-color:var(--rule)}
+details.about[open]{box-shadow:none}
+.tree{display:flex;flex-direction:column;gap:10px}
+.tree .sub{margin-left:18px}
+.dept{border:1.5px dashed var(--ink-2);border-radius:12px;padding:12px 10px 10px;display:flex;flex-direction:column;gap:8px}
+.dept .k{font-size:10.5px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--mute)}
+.dept-m{font-size:12.5px;color:var(--ink-2);margin:0}
+
+/* Together */
+.together{border-top:3px solid var(--ink);padding-top:26px;display:grid;grid-template-columns:minmax(0,260px) minmax(0,1fr);gap:24px 40px}
+.together h2{margin:0;font-size:28px;line-height:1.05;font-weight:900;text-transform:uppercase;letter-spacing:-.02em}
+.flows{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0;border-left:1.5px solid var(--ink)}
+.flow{padding:4px 22px 18px;border-bottom:1px solid var(--rule);display:flex;flex-direction:column;gap:4px}
+.flow:nth-last-child(-n+2){border-bottom:0}
+.flow .verb{font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--mute)}
+.flow h3{margin:0;font-size:16px;font-weight:800}
+.flow p{margin:0;font-size:13.5px;color:var(--ink-2)}
+footer{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;font-size:12px;color:var(--mute);border-top:1px solid var(--rule);padding-top:14px}
+
+@media (max-width:1000px){
+  .blocks{grid-template-columns:1fr 1fr}
+  .blocks::before{display:none}
+  .blocks .block:first-child{grid-column:1/-1}
+}
+@media (max-width:700px){
+  .mast{grid-template-columns:1fr}
+  .mast .logo{grid-column:1;grid-row:1;justify-self:start;width:150px}
+  .mast-text{grid-row:2}
+  .dir-row{grid-template-columns:1fr}
+  .dir-row .director{grid-column:1}
+  .assist-wrap{grid-column:1;padding-top:0;margin-left:22px;flex-direction:column}
+  .assist-wrap::before{flex:0 0 14px;border-top:0;border-left:2px dashed var(--ink);margin:0 0 0 0;height:14px;width:0}
+  .assist-wrap details{max-width:none;width:100%}
+  .deps{grid-template-columns:1fr;gap:14px}
+  .deps::before,.deps::after,.lead-tier>.spine,.to-blocks .spine{display:none}
+  .deps{padding-top:14px}
+  .to-blocks{margin:-20px 0 -28px}
+  .blocks{grid-template-columns:1fr;padding-top:0}
+  .blocks .block:first-child{grid-column:auto}
+  .together{grid-template-columns:1fr}
+  .flows{grid-template-columns:1fr}
+  .flow:nth-last-child(2){border-bottom:1px solid var(--rule)}
+}
+</style>
+
+<div class="wrap">
+  <header class="mast">
+    <div class="mast-text">
+      <div class="eyebrow">Короткий путівник для команди</div>
+      <h1>Як працює<br><em>Інститут міста</em></h1>
+      <p class="lead">За що відповідають керівництво, функціональні блоки та конкретні посади. Формулювання робочі: це основа для командного обговорення, а не затверджені посадові інструкції.</p>
+    </div>
+    <img class="logo" src="data:image/png;base64,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" alt="Інститут міста">
+    <div class="meta">
+      <span><b>3</b> функціональні блоки</span>
+      <span><b>27</b> посад</span>
+      <span><b>1</b> сектор</span>
+      <span class="tag">Проєкт · Жовтень 2026</span>
+    </div>
+  </header>
+
+  <div class="bar">
+    <p class="how">Натисніть на посаду або блок, щоб побачити <b>місію</b> (навіщо існує роль) і <b>ключові завдання</b> (основні напрями роботи).</p>
+    <div class="btns"><button class="btn" id="openAll" type="button">Розгорнути все</button><button class="btn" id="closeAll" type="button">Згорнути все</button></div>
+  </div>
+
+  <section class="lead-tier" aria-label="Керівництво">
+    <div class="dir-row">
+      <div class="director" data-r="dir"></div>
+      <div class="assist-wrap" data-r="assist"></div>
+    </div>
+    <div class="spine"></div>
+    <div class="deps">
+      <div class="dep" data-r="dep1"></div>
+      <div class="dep"><div data-r="dep2"></div><div class="sub" data-r="gts"></div></div>
+    </div>
+  </section>
+
+  <div class="to-blocks"><div class="spine"></div><div class="note">Пряме підпорядкування директору</div></div>
+
+  <section class="blocks" id="blocks" aria-label="Функціональні блоки"></section>
+
+  <section class="together">
+    <h2>Як блоки працюють разом</h2>
+    <div class="flows">
+      <div class="flow"><span class="verb">Обґрунтовує</span><h3>Аналітика та стратегічне планування</h3><p>Формує дані, дослідження, стратегічні рамки й обґрунтовані пропозиції.</p></div>
+      <div class="flow"><span class="verb">Реалізує</span><h3>Проєктна діяльність</h3><p>Втілює погоджені ініціативи й повертає дані про їхній поступ та результати.</p></div>
+      <div class="flow"><span class="verb">Забезпечує</span><h3>Операційна підтримка</h3><p>Відповідає за фінансовий облік, внутрішні процеси, комунікації та залучення зовнішніх ресурсів.</p></div>
+      <div class="flow"><span class="verb">Спрямовує</span><h3>Керівництво</h3><p>Встановлює пріоритети, ухвалює рішення та розв’язує міжблокові питання.</p></div>
+    </div>
+  </section>
+
+  <footer><span>Інститут міста · Організаційна структура</span><span>Робочий документ для обговорення · Жовтень 2026</span></footer>
+</div>
+
+<script>
+const R={
+dir:{n:"Директор",m:"Визначати напрям розвитку Інституту та забезпечувати цілісність його діяльності.",t:["Формувати пріоритети й ухвалювати ключові управлінські рішення.","Забезпечувати виконання завдань установи та узгодженість роботи блоків.","Представляти Інститут у відносинах із засновником і ключовими партнерами."]},
+assist:{n:"Помічник керівника",m:"Забезпечувати організаційну підтримку роботи директора.",t:["Координувати календар, зустрічі та робочі комунікації.","Готувати організаційні матеріали й контролювати проходження доручень.","Підтримувати порядок у документах і домовленостях керівника."]},
+dep1:{n:"І заступник",m:"Забезпечувати щоденну операційну узгодженість роботи Інституту та виконання рішень директора.",t:["Перетворювати рішення керівництва на конкретні завдання, відповідальних і строки.","Координувати міжблокові питання та усувати організаційні затримки.","Відстежувати виконання пріоритетних доручень і готувати директору інформацію для рішень."]},
+dep2:{n:"Заступник з гуманітарних питань",m:"Організовувати отримання гуманітарної допомоги з інших країн і її передавання визначеним отримувачам в Україні.",t:["Координувати взаємодію із закордонними сторонами, які надають допомогу.","Організовувати надходження, логістику та передавання допомоги на погоджені напрямки.","Забезпечувати документування руху й підтвердження передавання гуманітарної допомоги."]},
+gts:{n:"Господарсько-технічний сектор",m:"Забезпечувати господарські й технічні умови для безперервної роботи Інституту.",t:["Підтримувати працездатність приміщень, обладнання та матеріально-технічної інфраструктури.","Організовувати господарське обслуговування і технічні потреби установи.","Реагувати на заявки працівників щодо технічних та господарських питань."]}
+};
+const B=[
+{k:"Блок",n:"Операційної підтримки",m:"Забезпечувати фінансову дисципліну, організаційні процеси, комунікації та залучення зовнішніх ресурсів для роботи Інституту.",t:["Забезпечувати належний облік і операційний супровід.","Підтримувати внутрішній розвиток команди й зовнішню комунікацію.","Розвивати партнерства та залучати ресурси для діяльності установи."],
+ tree:[
+  {n:"Головний бухгалтер",m:"Забезпечувати достовірний бухгалтерський облік і обов’язкову фінансову звітність установи.",t:["Організовувати ведення бухгалтерського обліку.","Забезпечувати підготовку й подання обов’язкової звітності.","Контролювати коректність первинних документів і облікових процедур."],c:[
+    {n:"Бухгалтер",m:"Здійснювати поточні облікові операції відповідно до внутрішніх процедур та законодавства.",t:["Опрацьовувати первинні документи та облікові операції.","Підтримувати актуальність облікових даних.","Готувати потрібні облікові довідки й матеріали для звітності."]}]},
+  {n:"Керівник відділу комунікацій",m:"Формувати цілісну, зрозумілу й послідовну комунікацію Інституту.",t:["Планувати комунікаційні пріоритети та інформаційні кампанії.","Координувати створення й поширення контенту.","Забезпечувати узгодженість стилю, повідомлень і публічної присутності."],c:[
+    {n:"Дизайнер",m:"Створювати візуальні матеріали, що підтримують комунікацію й проєкти Інституту.",t:["Розробляти макети для цифрових і друкованих каналів.","Підтримувати єдиний візуальний стиль.","Адаптувати візуальні матеріали під формати й аудиторії."]},
+    {n:"SMM-менеджер",m:"Забезпечувати регулярну й змістовну присутність Інституту в соціальних мережах.",t:["Планувати та публікувати контент у соціальних мережах.","Взаємодіяти з аудиторією в межах комунікаційної політики.","Аналізувати результати комунікацій і пропонувати вдосконалення."]}]},
+  {n:"Керівник проєктів організаційного розвитку",m:"Розвивати організаційну спроможність Інституту через вдосконалення внутрішніх процесів, впровадження змін і розвиток компетентностей працівників.",t:["Ініціювати та координувати проєкти вдосконалення внутрішньої роботи.","Упорядковувати процеси, ролі та правила взаємодії.","Організовувати внутрішнє навчання та розвиток працівників відповідно до пріоритетів Інституту й актуальних потреб команди.","Координувати впровадження організаційних змін та оцінювати їх результати."],c:[
+    {n:"Інспектор з кадрів",m:"Забезпечувати належне кадрове адміністрування, ведення документації та військового обліку відповідно до вимог законодавства.",t:["Вести кадрову документацію та облік персоналу.","Супроводжувати кадрові зміни й належне оформлення трудових відносин.","Вести персональний військовий облік призовників, військовозобов’язаних і резервістів відповідно до чинного законодавства.","Забезпечувати актуальність кадрових і військово-облікових документів, дотримання встановлених процедур і строків."]}]},
+  {dept:"Відділ ресурсного розвитку та партнерств",dm:"Залучати зовнішні ресурси й партнерства для пріоритетів Інституту та забезпечувати фінансовий супровід саме залучених коштів.",
+   n:"Керівник відділу ресурсного розвитку та партнерств",m:"Координувати залучення коштів, розвиток партнерств і фінансовий супровід залучених ресурсів.",t:["Визначати пріоритети й план роботи відділу.","Узгоджувати донорські можливості та партнерські ініціативи з потребами блоків.","Контролювати виконання домовленостей і якість супроводу залученого фінансування."],c:[
+    {n:"Фахівець із фандрейзингу",m:"Знаходити можливості зовнішнього фінансування й допомагати перетворювати їх на підтримані заявки.",t:["Відстежувати конкурси та джерела фінансування.","Координувати підготовку грантових заявок і супровід подання.","Підтримувати комунікацію з донорами на етапі залучення ресурсів."]},
+    {n:"Фінансовий менеджер",m:"Забезпечувати фінансове планування, бюджетування та аналітичний супровід залучених коштів для ефективної реалізації програм і проєктів Інституту.",t:["Аналізувати виконання бюджетів, відстежувати фінансові відхилення та своєчасно виявляти ризики.","Контролювати відповідність запланованих витрат затвердженим бюджетам та умовам фінансування.","Готувати фінансові прогнози й рекомендації для ухвалення управлінських рішень.","Взаємодіяти з бухгалтерією та проєктними командами з питань фінансового супроводу залучених коштів."]},
+    {n:"Фахівець із партнерств",m:"Розбудовувати й підтримувати співпрацю, що допомагає Інституту реалізовувати його пріоритети.",t:["Шукати потенційних партнерів і підтримувати робочі контакти.","Супроводжувати домовленості та спільні ініціативи.","Вести актуальну інформацію про партнерства й наступні кроки."]}]}
+ ]},
+{k:"Блок",n:"Аналітики та стратегічного планування",m:"Надавати достовірні дані, дослідження й обґрунтовані підходи для стратегічних рішень щодо розвитку міста.",t:["Досліджувати потреби, тенденції та можливості розвитку міста.","Розробляти та супроводжувати стратегічні документи й плани.","Забезпечувати цифровий моніторинг і аналітичну підтримку рішень."],
+ tree:[{n:"Керівник блоку",m:"Організовувати дослідницьку та стратегічну роботу блоку й забезпечувати її користь для управлінських рішень.",t:["Формувати дослідницькі та стратегічні пріоритети.","Розподіляти завдання між фахівцями й забезпечувати якість результатів.","Представляти висновки та координувати взаємодію із замовниками аналітики."],c:[
+  {n:"Провідний експерт із стратегічного планування",m:"Забезпечувати методологічну цілісність і якість стратегічного планування.",t:["Розробляти підходи та рамки стратегічних документів.","Координувати складні етапи розроблення стратегій і залучення зацікавлених сторін.","Перевіряти узгодженість цілей, показників та пріоритетів."]},
+  {n:"Експерт із планування",m:"Перетворювати стратегічні цілі на узгоджені плани та пропозиції дій.",t:["Готувати плани заходів, дорожні карти й матеріали для планування.","Збирати та узгоджувати пропозиції від учасників процесу.","Супроводжувати оновлення планових документів."]},
+  {n:"Експерт технічного забезпечення подій та цифрового моніторингу",m:"Забезпечувати технічний супровід подій Інституту та функціонування цифрових інструментів моніторингу виконання стратегії, досягнення стратегічних цілей і цільових показників (KPI, OKR).",t:["Організовувати технічну підготовку та супровід подій, які проводить Інститут.","Забезпечувати налаштування, функціонування й підтримку цифрових інструментів моніторингу реалізації стратегії.","Забезпечувати актуальність цифрових панелей моніторингу (дашбордів) для відстеження прогресу та виявлення відхилень від запланованих результатів."]},
+  {n:"Аналітик даних та стратегічних досліджень",m:"Перетворювати дані та дослідження на висновки для стратегічних рішень.",t:["Збирати, перевіряти й аналізувати дані.","Проводити стратегічні дослідження за визначеними запитами.","Готувати аналітичні матеріали із зазначенням джерел та обмежень."]},
+  {n:"Проєктний менеджер блоку",m:"Організовувати виконання аналітичних і стратегічних проєктів у погоджені строки.",t:["Планувати етапи, ресурси й дедлайни проєктів блоку.","Координувати учасників і відстежувати виконання.","Забезпечувати готовність результатів та передачу матеріалів замовникам."]}]}]},
+{k:"Блок",n:"Проєктної діяльності",m:"Перетворювати затверджені пріоритети та ініціативи на реалізовані програми й проєкти.",t:["Формувати й вести портфель програм і проєктів.","Забезпечувати планування, координацію та виконання проєктів.","Відстежувати результати, ризики та виконання зобов’язань."],
+ tree:[{n:"Керівник блоку",m:"Забезпечувати результативність усього портфеля проєктів Інституту.",t:["Пріоритезувати портфель проєктів і координувати команди.","Відстежувати строки, ресурси, ризики та результати.","Узгоджувати проєктні рішення з директором і суміжними блоками."],c:[
+  {n:"Програмний менеджер",m:"Забезпечувати узгоджене досягнення результатів програми, що об’єднує кілька пов’язаних ініціатив або проєктів.",t:["Планувати програмні цілі, взаємозв’язки та очікувані результати.","Координувати проєкти в межах програми й оцінювати сукупний поступ.","Готувати узагальнену інформацію для управлінських рішень."],c:[
+    {n:"Асистент",m:"Забезпечувати організаційну підтримку програмного менеджера та роботи відповідної програми.",t:["Підтримувати календар, зустрічі та комунікації.","Упорядковувати документи й робочі матеріали.","Допомагати відстежувати завдання, домовленості та строки."]}]},
+  {n:"Проєктні менеджери",cnt:"3 посади",m:"Забезпечувати повний цикл виконання закріплених проєктів: від планування до підтвердженого результату.",t:["Формувати робочі плани, графіки та завдання проєктів.","Координувати виконавців, партнерів і ресурси.","Відстежувати виконання, ризики, звітність і досягнення результатів."]}]}]}
+];
+const esc=s=>s.replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+function role(r,cls=""){
+  const tasks=r.t.map(x=>`<li>${esc(x)}</li>`).join("");
+  return `<details class="role ${cls}"><summary><span class="nm">${esc(r.n)}</span>${r.cnt?`<span class="cnt">${esc(r.cnt)}</span>`:""}<span class="pm" aria-hidden="true"></span></summary>
+  <div class="body"><div><p class="lbl">Місія</p><p>${esc(r.m)}</p></div><div><p class="lbl">Ключові завдання</p><ul>${tasks}</ul></div></div></details>`;
+}
+function node(r){
+  let h=role(r,r.c?"mgr":"");
+  if(r.c)h+=`<div class="sub">${r.c.map(node).join("")}</div>`;
+  if(r.dept)h=`<div class="dept"><span class="k">${esc(r.dept)}</span><p class="dept-m">${esc(r.dm)}</p>${h}</div>`;
+  return `<div class="nd">${h}</div>`;
+}
+const put=(k,cls)=>document.querySelector(`[data-r="${k}"]`).innerHTML=role(R[k],cls);
+put("dir","solid");put("assist");put("dep1","solid");put("dep2","solid");put("gts","mgr");
+document.getElementById("blocks").innerHTML=B.map(b=>`<article class="block"><div class="block-h"><span class="k">${b.k}</span><h2>${esc(b.n)}</h2></div>
+  <details class="role about"><summary><span class="nm">Місія та завдання блоку</span><span class="pm" aria-hidden="true"></span></summary><div class="body"><div><p class="lbl">Місія блоку</p><p>${esc(b.m)}</p></div><div><p class="lbl">Ключові завдання</p><ul>${b.t.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div></div></details>
+  <div class="tree">${b.tree.map(node).join("")}</div></article>`).join("");
+const all=()=>document.querySelectorAll("details");
+document.getElementById("openAll").onclick=()=>all().forEach(d=>d.open=true);
+document.getElementById("closeAll").onclick=()=>all().forEach(d=>d.open=false);
+</script>
+
+</body></html>
